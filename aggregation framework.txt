@@ -91,4 +91,12 @@ db.persons
         }}
         ])
 
+$count:
 
+db.persons.aggregate([
+{$match:{age:{$gte:25}}},
+//stage 2
+{$group:{_id:{eyeColor:"$eyeColor",age:"$age"}}},  
+//stage 3
+{$count:"total-eyeColorAndAge"}
+])
