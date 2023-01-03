@@ -8,7 +8,9 @@ db.products.aggregate([
   // pipeline 2
   {
     $addFields: {
-      ExtraField: { $toDouble: "$Price" }
+      ExtraField1: { $toDouble: "$Price" },
+      ExtraField2: { $toDouble: "$Price" },
+      ExtraField3: { $toDouble: "$Price" }
     }
   }
 ])
